@@ -1,0 +1,1 @@
+/Users/nguyen.van.quyc/AndroidStudioProjects/MovieDbApp/buildSrc/build/classes/kotlin/main/Configurations.class

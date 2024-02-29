@@ -24,6 +24,9 @@
       <entry key="core.domain">
         <State />
       </entry>
+      <entry key="core.firestore">
+        <State />
+      </entry>
       <entry key="domain">
         <State />
       </entry>

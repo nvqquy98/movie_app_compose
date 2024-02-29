@@ -1,21 +1,22 @@
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
-import com.dutkinght.moviedb.configureAndroidCompose
 import com.dutkinght.moviedb.configureKotlinAndroid
-import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
-class AndroidApplicationConventionPlugin : Plugin<Project> {
-    override fun apply(target: Project) {
-        with(target) {
-            with(pluginManager) {
-                apply("com.android.application")
-                apply("org.jetbrains.kotlin.android")
-            }
+class AndroidApplicationConventionPlugin : CommonApplicationConventionPlugin() {
+    override val pluginIds: List<String>
+        get() = plugIds
 
+    override fun apply(target: Project) {
+        super.apply(target)
+        with(target) {
             extensions.configure<BaseAppModuleExtension> {
                 configureKotlinAndroid(this)
             }
         }
+    }
+
+    companion object {
+        private val plugIds = listOf("com.android.application", "org.jetbrains.kotlin.android")
     }
 }

@@ -9,14 +9,6 @@ import java.io.File
  * Configure Compose-specific options
  */
 
-val composeLibs = listOf(
-    "androidx-compose-constraintlayout",
-    "androidx-compose-ui",
-    "androidx-compose-ui-graphics",
-    "androidx-compose-ui-tool-preview",
-    "androidx-compose-ui-tooling",
-    "androidx-compose-material3"
-)
 
 internal fun Project.configureAndroidCompose(commonExt: CommonExtension<*, *, *, *, *>) {
     commonExt.apply {
@@ -29,12 +21,6 @@ internal fun Project.configureAndroidCompose(commonExt: CommonExtension<*, *, *,
 
         kotlinOptions {
             freeCompilerArgs += buildComposeMetricsParameter()
-        }
-        dependencies {
-            add("implementation", platform(libs.findLibrary("androidx-compose-bom").get()))
-            composeLibs.forEach {
-                add("implementation", libs.findLibrary(it).get())
-            }
         }
     }
 }

@@ -1,0 +1,29 @@
+{
+    "project_info": {
+        "project_number": "12321791584",
+        "project_id": "moviedbcompose",
+        "storage_bucket": "moviedbcompose.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:12321791584:android:8540d69e6c35ae1c39ad05",
+                "android_client_info": {
+                    "package_name": "com.dutkinght.moviedbapp"
+                }
+            },
+            "oauth_client": [],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyDsApcs9VygTyL_4KpWpvcHv2gpslCsA-Q"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": []
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

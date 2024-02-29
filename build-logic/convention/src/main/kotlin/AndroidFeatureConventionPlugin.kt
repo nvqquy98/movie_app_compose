@@ -1,22 +1,11 @@
-import com.dutkinght.moviedb.libs
-import org.gradle.api.Plugin
-import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
-import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getByType
+class AndroidFeatureConventionPlugin : CommonApplicationConventionPlugin() {
+    override val pluginIds: List<String>
+        get() = plugIds
+    override val libraries: Map<String, List<String>>
+        get() = libs
 
-class AndroidFeatureConventionPlugin : Plugin<Project> {
-    override fun apply(target: Project) {
-        with(target) {
-            pluginManager.apply {
-                apply("com.android.library")
-                apply("org.jetbrains.kotlin.android")
-            }
-
-            dependencies {
-                add("implementation", libs.findLibrary("kotlinx.coroutines.android").get())
-            }
-        }
+    companion object {
+        private val plugIds = listOf("com.android.application", "org.jetbrains.kotlin.android")
+        val libs = mapOf("implementation" to listOf("kotlinx.coroutines.android"))
     }
-
 }

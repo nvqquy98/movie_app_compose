@@ -1,9 +1,9 @@
 plugins {
-    id("dutkinght.android.application")
-    id("dutkinght.android.application.compose")
-    id("dutkinght.android.hilt")
-    id("com.google.devtools.ksp")
-    id("dutkinght.spotless")
+    alias(libs.plugins.dutkinght.android.application)
+    alias(libs.plugins.dutkinght.android.application.compose)
+    alias(libs.plugins.dutkinght.android.hilt)
+    alias(libs.plugins.dutkinght.android.firebase)
+    alias(libs.plugins.dutkinght.spotless)
 }
 
 android {
@@ -46,7 +46,6 @@ dependencies {
     // jetpack
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
-    ksp(libs.hilt.android.compiler)
 
     testImplementation(libs.junit.test)
     androidTestImplementation(libs.junit.ext)

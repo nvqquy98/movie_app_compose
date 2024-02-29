@@ -13,6 +13,7 @@ dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.spotless.gradlePlugin)
+    implementation(libs.androidx.annotation.jvm)
 }
 
 gradlePlugin {
@@ -45,6 +46,11 @@ gradlePlugin {
         register("androidLibrary") {
             id = "dutkinght.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
+        }
+
+        register("AndroidFirebaseConventionPlugin") {
+            id = "dutkinght.android.firebase"
+            implementationClass = "AndroidFirebaseConventionPlugin"
         }
 
         register("SpotlessConventionPlugin") {
